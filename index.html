@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<div id="todo">
+<body>
+    <div id="user-input">
+        <input type="text" v-model="current_input.title" v-on:keyup.enter="add_todo">
+        <button v-on:click="add_todo">提交</button>
+    </div>
+    <ul class="todo-list">
+        <li class="user-todo" v-for="(todo,index) in this.todo_list">
+            {{ todo.title }}
+        </li>
+    </ul>
+</div>
+
+<script src="./vue.js"></script>
+<script src="./main.js"></script>
+</body>
+</html>
