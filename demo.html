@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<style>
+		.demo {
+			width: 400px;
+			border: 1px solid #000;
+			padding: 30px;
+		}
+		.em {
+			color: #f00;
+		}
+		.user-input-container {
+			border: 1px solid red;
+			margin-bottom: 24px;
+		}
+		.user-input-container input {
+			width: 285px;
+		}
+		.back-reasons {
+			border: 1px solid red;
+			padding-bottom: 30px;
+		}
+		textarea {
+			min-width: 285px;
+			max-width: 285px;
+			/*resize: none;*/
+		}
+		.fl {
+			float: left;
+		}
+		.fr {
+			float: right;
+		}
+		.clear-fix::after{
+			content: '';
+			display: block;
+			clear: both;
+		}
+		.text1,.text2 {
+			width: 100px;
+			text-align: right;
+			margin: 0;
+		}
+		button {
+			width: 100px;
+			padding: 5px;
+			background-color: cadetblue;
+			color:#fff;
+			outline: none;
+			border: none;
+			-webkit-appearance: button;
+		}
+	</style>
+</head>
+<body>
+	<div class="demo">
+		<div class="user-input-container clear-fix">
+			<label for="user-input" class="text1 fl">营销目标名称:</label>
+			<input type="text" placeholder="请输入" id="user-input" class="fr">
+		</div>
+		<div class="back-reasons clear-fix">
+			<p class="fl text2"><span class="em">*</span>退回原因:</p>
+			<textarea name="" id="" cols="285" rows="10" class="fr"></textarea>
+		</div>
+		<div class="button-container fr">
+			<button type="button">确定</button>
+			<button type="button">取消</button>
+		</div>
+	</div>
+</body>
+</html>

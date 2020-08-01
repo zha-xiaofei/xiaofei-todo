@@ -7,19 +7,43 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
-<div id="todo">
 <body>
+<div id="todo">
     <div id="user-input">
         <input type="text" v-model="current_input.title" v-on:keyup.enter="add_todo">
         <button v-on:click="add_todo">提交</button>
     </div>
+    <todo-list>
+
+    </todo-list>
     <ul class="todo-list">
-        <li class="user-todo" v-for="(todo,index) in this.todo_list">
+        <li class="user-todo" v-for="(todo,index) in this.todo_list" v-if="!todo.isCompleted">
             {{ todo.title }}
+            <button @click="remove(index)">移除</button>
+            <button @click="update_todo(index)">更新</button>
+            <button @click="toggle_completed(index)">完成</button>
+        </li>
+    </ul>
+    <p>已完成</p>
+    <ul class="todo-list">
+        <li v-for="(todo,index) in todo_list" v-if="todo.isCompleted">
+            {{todo.title}}
+            <button @click="remove(index)">移除</button>
+            <button @click="update_todo(index)">更新</button>
+            <button @click="toggle_completed(index)">完成</button>
         </li>
     </ul>
 </div>
-
+<template id="todo-list-tpl">
+    <ul class="todo-list">
+        <li class="user-todo" v-for="(todo,index) in this.todo_list" v-if="!todo.isCompleted">
+            {{ todo.title }}
+            <button @click="remove(index)">移除</button>
+            <button @click="update_todo(index)">更新</button>
+            <button @click="toggle_completed(index)">完成</button>
+        </li>
+    </ul>
+</template>
 <script src="./vue.js"></script>
 <script src="./main.js"></script>
 </body>
